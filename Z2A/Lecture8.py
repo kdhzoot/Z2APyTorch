@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader, Dataset
 
 class DiabetesDataset(Dataset):
     def __init__(self):
-        xy = np.loadtxt('data/diabetes.csv', delimiter=',', dtype=np.float32)
+        xy = np.loadtxt('../data/diabetes.csv', delimiter=',', dtype=np.float32)
         self.len = xy.shape[0]
         self.x_data = Variable(torch.from_numpy(xy[:, 0:-1]))
         self.y_data = Variable(torch.from_numpy(xy[:, [-1]]))
